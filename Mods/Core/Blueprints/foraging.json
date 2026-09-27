@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../schemas/blueprint.schema.json",
+  "id": "blueprint_foraging",
+  "nameTerm": "recipe_forage_name",
+  "group": "Nature",
+  "subprints": [
+    {
+      "requiredCards": ["berry_bush", "tag:worker"],
+      "resultCards": [
+        { "id": "berry", "chance": 1.0, "amount": 1 }
+      ],
+      "consumedInputs": [false, false],
+      "time": 5.0,
+      "statusTerm": "status_foraging",
+      "priority": 10
+    }
+  ]
+}

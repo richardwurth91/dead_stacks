@@ -1,0 +1,9 @@
+{
+  "$schema": "../../schemas/manifest.schema.json",
+  "id": "core",
+  "name": "Core Expansion",
+  "version": "1.0.0",
+  "author": "Antigravity Team",
+  "description": "Base cards, natural resources, crafting recipes, and booster packs",
+  "priority": 0
+}

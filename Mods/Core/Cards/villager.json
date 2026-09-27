@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../schemas/card.schema.json",
+  "id": "villager",
+  "nameTerm": "card_villager_name",
+  "descriptionTerm": "card_villager_desc",
+  "type": "Worker",
+  "value": -1,
+  "cardLimitCost": 1,
+  "tags": ["tag:worker", "tag:human"],
+  "dynamicProperties": {
+    "_FoodDemand": 1,
+    "_CombatTier": "Normal",
+    "_Archetype": "Melee"
+  },
+  "visualOverrides": {
+    "background": "#2e7d32",
+    "border": "#a5d6a7",
+    "typography": "#ffffff"
+  }
+}

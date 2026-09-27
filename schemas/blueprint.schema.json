@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BlueprintDefinition",
+  "type": "object",
+  "required": ["id", "nameTerm", "group", "subprints"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$",
+      "description": "Unique identifier for the blueprint recipe (e.g., blueprint_smelt_iron)."
+    },
+    "nameTerm": {
+      "type": "string",
+      "description": "Localization token for the recipe name."
+    },
+    "group": {
+      "type": "string",
+      "description": "Conceptual category for filtering in Cardopedia (e.g. Industry, Nature, Cooking)."
+    },
+    "subprints": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["requiredCards", "resultCards", "consumedInputs", "time", "statusTerm"],
+        "properties": {
+          "requiredCards": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string" },
+            "description": "Multiset of Card IDs or abstract tags (e.g., ['iron_ore', 'wood', 'tag:worker'])."
+          },
+          "resultCards": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["id", "chance", "amount"],
+              "properties": {
+                "id": { "type": "string" },
+                "chance": { "type": "number", "minimum": 0, "maximum": 1 },
+                "amount": { "type": "integer", "minimum": 1 }
+              },
+              "additionalProperties": false
+            }
+          },
+          "consumedInputs": {
+            "type": "array",
+            "items": { "type": "boolean" },
+            "description": "Per-ingredient boolean flags dictating whether the item is destroyed upon completion."
+          },
+          "time": {
+            "type": "number",
+            "minimum": 0.1,
+            "description": "Duration in seconds required to complete the crafting operation."
+          },
+          "statusTerm": {
+            "type": "string",
+            "description": "Localization token displayed above crafting progress bar."
+          },
+          "priority": {
+            "type": "integer",
+            "default": 0,
+            "description": "Explicit integer weighting used to break recipe match ambiguities."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

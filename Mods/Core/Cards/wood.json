@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../schemas/card.schema.json",
+  "id": "wood",
+  "nameTerm": "card_wood_name",
+  "descriptionTerm": "card_wood_desc",
+  "type": "Resource",
+  "value": 1,
+  "cardLimitCost": 1,
+  "tags": ["tag:material", "tag:fuel"],
+  "dynamicProperties": {
+    "_FuelDuration": 15
+  },
+  "visualOverrides": {
+    "background": "#4e342e",
+    "border": "#bcaaa4",
+    "typography": "#ffffff"
+  }
+}

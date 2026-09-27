@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../schemas/card.schema.json",
+  "id": "coin",
+  "nameTerm": "card_coin_name",
+  "descriptionTerm": "card_coin_desc",
+  "type": "Coin",
+  "value": 1,
+  "cardLimitCost": 0,
+  "tags": ["tag:currency"],
+  "dynamicProperties": {},
+  "visualOverrides": {
+    "background": "#f57f17",
+    "border": "#fff59d",
+    "typography": "#000000"
+  }
+}

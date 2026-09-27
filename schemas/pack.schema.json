@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PackDefinition",
+  "type": "object",
+  "required": ["id", "cost", "cardsPerPack", "dropPool"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$",
+      "description": "Unique booster pack identifier (e.g., pack_basic_exploration)."
+    },
+    "nameTerm": {
+      "type": "string",
+      "description": "Localization token for the pack name."
+    },
+    "cost": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Number of coins required to purchase and open the pack."
+    },
+    "cardsPerPack": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Total number of cards ejected when opened."
+    },
+    "dropPool": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "weight"],
+        "properties": {
+          "id": { "type": "string" },
+          "weight": { "type": "number", "minimum": 0 },
+          "condition": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "guaranteeRules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["cardId", "afterPacks"],
+        "properties": {
+          "cardId": { "type": "string" },
+          "afterPacks": { "type": "integer", "minimum": 1 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

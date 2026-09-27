@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../schemas/card.schema.json",
+  "id": "rock",
+  "nameTerm": "card_rock_name",
+  "descriptionTerm": "card_rock_desc",
+  "type": "Resource",
+  "value": 1,
+  "cardLimitCost": 1,
+  "tags": ["tag:material", "tag:mineral"],
+  "dynamicProperties": {
+    "_Hardness": 2
+  },
+  "visualOverrides": {
+    "background": "#37474f",
+    "border": "#b0bec5",
+    "typography": "#ffffff"
+  }
+}

@@ -1,0 +1,22 @@
+key	en	es
+card_villager_name	Villager	Aldeano
+card_villager_desc	A hard-working villager eager to harvest resources and build.	Un aldeano trabajador dispuesto a recolectar recursos.
+card_berry_bush_name	Berry Bush	Arbusto de Bayas
+card_berry_bush_desc	Yields sweet red berries when foraged by a worker.	Produce bayas rojas dulces cuando es recolectado.
+card_berry_name	Berry	Baya
+card_berry_desc	Nutritious wild food that feeds one villager for a moon.	Alimento silvestre nutritivo para alimentar un aldeano.
+card_wood_name	Wood	Madera
+card_wood_desc	Sturdy timber used for constructing shelters and crafting tools.	Madera resistente para construir refugios y herramientas.
+card_rock_name	Rock	Piedra
+card_rock_desc	Heavy stone suitable for masonry and crafting weapons.	Piedra pesada adecuada para mampostería y armas.
+card_coin_name	Gold Coin	Moneda de Oro
+card_coin_desc	Shiny currency accepted by the wandering trader and booster packs.	Moneda brillante aceptada para comprar sobres.
+card_goblin_name	Goblin Raider	Asaltante Duende
+card_goblin_desc	A sneaky hostile creature armed with a crude club.	Una criatura hostil armada con un garrote.
+card_corpse_name	Corpse	Cadáver
+card_corpse_desc	The tragic remnant of a villager who starved.	El trágico resto de un aldeano que murió de hambre.
+pack_beginnings_name	Humble Beginnings	Humildes Comienzos
+recipe_forage_name	Forage Berries	Recolectar Bayas
+status_foraging	Harvesting fresh berries...	Recolectando bayas...
+recipe_chop_name	Chop Wood	Talar Madera
+status_chopping	Splitting logs...	Cortando leña...

@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../schemas/blueprint.schema.json",
+  "id": "blueprint_forestry",
+  "nameTerm": "recipe_chop_name",
+  "group": "Nature",
+  "subprints": [
+    {
+      "requiredCards": ["wood", "tag:worker"],
+      "resultCards": [
+        { "id": "wood", "chance": 1.0, "amount": 1 },
+        { "id": "wood", "chance": 0.5, "amount": 1 }
+      ],
+      "consumedInputs": [true, false],
+      "time": 4.0,
+      "statusTerm": "status_chopping",
+      "priority": 5
+    }
+  ]
+}

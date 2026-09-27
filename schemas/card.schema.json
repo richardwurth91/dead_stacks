@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CardDefinition",
+  "type": "object",
+  "required": ["id", "nameTerm", "type"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$",
+      "description": "Unique identifier for the card definition (e.g., villager, iron_sword)."
+    },
+    "nameTerm": {
+      "type": "string",
+      "description": "Localization token resolving to the localized card name."
+    },
+    "descriptionTerm": {
+      "type": "string",
+      "description": "Localization token resolving to rules text and descriptive lore."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Worker",
+        "Food",
+        "Resource",
+        "Structure",
+        "Mob",
+        "Blueprint",
+        "Pack",
+        "Equipment",
+        "Coin",
+        "Corpse"
+      ],
+      "description": "Core categorical classification."
+    },
+    "script": {
+      "type": "string",
+      "description": "Optional class identifier mapped to execution controller (e.g. CombatableWorker)."
+    },
+    "icon": {
+      "type": "string",
+      "description": "Relative file path to an external .png texture or existing icon asset."
+    },
+    "value": {
+      "type": "integer",
+      "default": 1,
+      "description": "Base economic value in gold coins; -1 designates unsellable items."
+    },
+    "cardLimitCost": {
+      "type": "integer",
+      "default": 1,
+      "description": "Weight contributed toward the board population cap."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Abstract classification tags (e.g., ['tag:worker', 'tag:human'])."
+    },
+    "dynamicProperties": {
+      "type": "object",
+      "description": "Key-value store exposing component variables to the simulation (e.g., _FoodValue, _CombatTier).",
+      "additionalProperties": true
+    },
+    "visualOverrides": {
+      "type": "object",
+      "properties": {
+        "background": { "type": "string", "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$" },
+        "border": { "type": "string", "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$" },
+        "typography": { "type": "string", "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../schemas/pack.schema.json",
+  "id": "pack_humble_beginnings",
+  "nameTerm": "pack_beginnings_name",
+  "cost": 3,
+  "cardsPerPack": 4,
+  "dropPool": [
+    { "id": "berry_bush", "weight": 35 },
+    { "id": "wood", "weight": 30 },
+    { "id": "rock", "weight": 25 },
+    { "id": "villager", "weight": 10 }
+  ],
+  "guaranteeRules": [
+    { "cardId": "villager", "afterPacks": 4 }
+  ]
+}

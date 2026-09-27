@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../schemas/card.schema.json",
+  "id": "corpse",
+  "nameTerm": "card_corpse_name",
+  "descriptionTerm": "card_corpse_desc",
+  "type": "Corpse",
+  "value": 0,
+  "cardLimitCost": 1,
+  "tags": ["tag:remains"],
+  "dynamicProperties": {},
+  "visualOverrides": {
+    "background": "#212121",
+    "border": "#757575",
+    "typography": "#e0e0e0"
+  }
+}

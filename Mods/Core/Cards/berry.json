@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../schemas/card.schema.json",
+  "id": "berry",
+  "nameTerm": "card_berry_name",
+  "descriptionTerm": "card_berry_desc",
+  "type": "Food",
+  "value": 1,
+  "cardLimitCost": 1,
+  "tags": ["tag:food", "tag:raw_food"],
+  "dynamicProperties": {
+    "_FoodValue": 1,
+    "_CanSpoil": false
+  },
+  "visualOverrides": {
+    "background": "#e65100",
+    "border": "#ffcc80",
+    "typography": "#ffffff"
+  }
+}

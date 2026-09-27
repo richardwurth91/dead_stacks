@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../schemas/card.schema.json",
+  "id": "goblin",
+  "nameTerm": "card_goblin_name",
+  "descriptionTerm": "card_goblin_desc",
+  "type": "Mob",
+  "value": 2,
+  "cardLimitCost": 1,
+  "tags": ["tag:hostile", "tag:mob"],
+  "dynamicProperties": {
+    "_CombatTier": "Weak",
+    "_Archetype": "Melee",
+    "_Health": 4
+  },
+  "visualOverrides": {
+    "background": "#b71c1c",
+    "border": "#ef9a9a",
+    "typography": "#ffffff"
+  }
+}

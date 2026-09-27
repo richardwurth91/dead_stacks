@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../schemas/card.schema.json",
+  "id": "berry_bush",
+  "nameTerm": "card_berry_bush_name",
+  "descriptionTerm": "card_berry_bush_desc",
+  "type": "Resource",
+  "value": 1,
+  "cardLimitCost": 1,
+  "tags": ["tag:plant", "tag:harvestable"],
+  "dynamicProperties": {
+    "_MaxHarvests": 3,
+    "_HarvestYield": "berry"
+  },
+  "visualOverrides": {
+    "background": "#558b2f",
+    "border": "#c5e1a5",
+    "typography": "#ffffff"
+  }
+}
