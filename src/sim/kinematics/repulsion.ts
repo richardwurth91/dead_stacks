@@ -33,9 +33,8 @@ export function calculateRepulsionImpulse(
     return { x: 0, y: 0 };
   }
 
-  // Handle exact overlap with a deterministic micro-offset to prevent NaN
-  const nx = dist === 0 ? 0.7071 : dx / dist;
-  const ny = dist === 0 ? 0.7071 : dy / dist;
+  const nx = dx / dist;
+  const ny = dy / dist;
 
   // Spring compression distance (negative since distance is less than clearance)
   const compression = dist - config.clearanceRadius;
@@ -48,16 +47,8 @@ export function calculateRepulsionImpulse(
   const dampingForceY = -config.dampingCoefficient * relVelY;
 
   // Total force vector
-  let totalFx = springForceMagnitude * nx + dampingForceX;
-  let totalFy = springForceMagnitude * ny + dampingForceY;
-
-  // Clamp maximum impulse
-  const forceMagnitude = Math.sqrt(totalFx * totalFx + totalFy * totalFy);
-  if (forceMagnitude > config.maxImpulse) {
-    const scale = config.maxImpulse / forceMagnitude;
-    totalFx *= scale;
-    totalFy *= scale;
-  }
+  const totalFx = springForceMagnitude * nx + dampingForceX;
+  const totalFy = springForceMagnitude * ny + dampingForceY;
 
   return { x: totalFx, y: totalFy };
 }

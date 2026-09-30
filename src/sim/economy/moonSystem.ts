@@ -159,13 +159,13 @@ export class MoonSystem {
       // Pick unfed workers from the end of the list
       const unfedWorkers = workerEntities.slice(fedCount);
       for (const workerId of unfedWorkers) {
-        const transform = this.world.getComponent(workerId, 'transform');
-        const corpseX = transform ? transform.x : 200;
-        const corpseY = transform ? transform.y : 200;
-
         StackTopology.extractSubStack(this.world, workerId);
         this.world.destroyEntity(workerId);
         globalEventBus.emit('OnCardDestroyed', { entityId: workerId, cardDefId: 'villager' });
+
+        const transform = this.world.getComponent(workerId, 'transform');
+        const corpseX = transform ? transform.x : 200;
+        const corpseY = transform ? transform.y : 200;
 
         // Instantiate corpse card
         CardFactory.createFromRegistry(this.world, 'corpse', corpseX, corpseY, this.registry);

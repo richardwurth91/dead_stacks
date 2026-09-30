@@ -166,25 +166,14 @@ export class CraftingSystem {
     }
 
     // 2. Spawn output results
-    const spawnedResults: string[] = [];
-    for (const result of subprint.resultCards) {
-      if (Math.random() <= result.chance) {
-        for (let a = 0; a < result.amount; a++) {
-          spawnedResults.push(result.id);
-        }
-      }
-    }
-
-    // Apply Archimedean spiral dispersal if multiple items spawn
-    const spiralOffsets = getArchimedeanSpiralOffsets(spawnedResults.length, 60, 15);
-    for (let i = 0; i < spawnedResults.length; i++) {
-      const resultDefId = spawnedResults[i];
-      const offset = spiralOffsets[i] || { x: 0, y: 0 };
+    const firstResult = subprint.resultCards[0];
+    if (firstResult) {
+      const offsets = getArchimedeanSpiralOffsets(1, 40, 20);
       CardFactory.createFromRegistry(
         this.world,
-        resultDefId,
-        spawnOriginX + offset.x,
-        spawnOriginY + offset.y,
+        firstResult.id,
+        spawnOriginX + offsets[0].x,
+        spawnOriginY + offsets[0].y,
         this.registry
       );
     }

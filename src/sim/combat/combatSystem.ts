@@ -98,9 +98,6 @@ export class CombatSystem {
       const entry = this.attackQueue.shift()!;
       const attackerId = entry.attackerId;
 
-      // Verify attacker still exists and has valid target
-      if (!this.world.hasComponent(attackerId, 'combatant')) continue;
-
       const executed = this.executeAttack(attackerId);
       if (executed) {
         // Enforce global coordination window lock
@@ -188,15 +185,13 @@ export class CombatSystem {
       // Spawn loot drops
       for (let i = 0; i < lootTable.length; i++) {
         const lootId = lootTable[i];
-        if (this.registry.hasCard(lootId)) {
-          CardFactory.createFromRegistry(
-            this.world,
-            lootId,
-            spawnX + i * 20,
-            spawnY + i * 20,
-            this.registry
-          );
-        }
+        CardFactory.createFromRegistry(
+          this.world,
+          lootId,
+          spawnX + i * 20,
+          spawnY + i * 20,
+          this.registry
+        );
       }
     }
   }

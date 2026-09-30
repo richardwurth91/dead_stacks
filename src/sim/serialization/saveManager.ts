@@ -284,8 +284,8 @@ export class SaveManager {
     // 3. Reconstruct stack topology linkages
     for (const card of state.cards) {
       const entityId = guidToEntityId.get(card.guid)!;
-      const parentId = card.stackNode.parentGuid ? guidToEntityId.get(card.stackNode.parentGuid) ?? null : null;
-      const childId = card.stackNode.childGuid ? guidToEntityId.get(card.stackNode.childGuid) ?? null : null;
+      const parentId = card.stackNode.parentGuid ? (guidToEntityId.get(card.stackNode.parentGuid) as number) : null;
+      const childId = card.stackNode.childGuid ? (guidToEntityId.get(card.stackNode.childGuid) as number) : null;
       const stackRootId = guidToEntityId.get(card.stackNode.stackRootGuid) ?? entityId;
 
       world.addComponent(entityId, 'stackNode', {
@@ -328,7 +328,9 @@ export class SaveManager {
       simLoop.moonSystem.restoreState(state.moon);
     }
     if (state.packManager) {
-      packManager.restoreState(state.packManager);
+      packManager.restoreState({
+        unlockedBlueprints: state.packManager.unlockedBlueprints,
+      });
     }
 
     // 6. Emit OnCardSpawned for all newly instantiated cards so View layer renders them
